@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'dashboard#new'
 
-  resources :admin
+  resources :movies
   
   devise_for :users
 
