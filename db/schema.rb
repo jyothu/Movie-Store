@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190207072856) do
+ActiveRecord::Schema.define(version: 20190211102405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20190207072856) do
     t.string   "wallpaper_content_type"
     t.integer  "wallpaper_file_size"
     t.datetime "wallpaper_updated_at"
+    t.text     "comments"
   end
 
   create_table "stars", force: :cascade do |t|

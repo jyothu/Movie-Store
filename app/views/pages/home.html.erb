@@ -13,6 +13,7 @@
 
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="style.css">
+
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -24,7 +25,7 @@
 		<div id="site-content">
 			<header class="site-header">
 				<div class="container">
-					<a href="index.html" id="branding">
+					<a href="/" id="branding">
 						<img src="/assets/logo.png" alt="" class="logo">
 						<div class="logo-copy">
 							<h1 class="site-title">Movie Store</h1>
@@ -37,8 +38,7 @@
 						<ul class="menu">
 							
 							<li class="menu-item"><%= link_to 'Sign in', new_user_session_path %></li>
-							<li class="menu-item"><%= link_to 'Sign up', new_user_registration_path %>
-
+							<li class="menu-item"><%= link_to 'Dashboard', dashboard_path %>
 						</ul> <!-- .menu -->
 
 						<form action="#" class="search-form">
