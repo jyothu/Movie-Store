@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
     dashboard_path(current_user) #your path
   end
 
-
   protected
 
   def configure_permitted_parameters

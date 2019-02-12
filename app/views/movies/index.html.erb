@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+<div class="movie_list">
+
+    <h2> Movies List
+    <div class="sign_out_button">
+        <button class="btn btn-default">
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    </div> </h2>
+    <br> <br>
+
+  <div class="container">
+
+  <% @movie.each do |movie| %>
+    <div class="card1">
+    <img class="card-img-top" src="movie.wallpaper.url" style="width:100%">
+      <%= image_tag movie.wallpaper.url(:thumb)%>
+      <div class="card-body">
+        <h4 class="card-title"><%= movie.name %></h4>
+        <p class="card-text"><%= movie.short_description %></p>
+        <a href="#" class="btn btn-primary">Find More!</a>
+      </div>
+    </div>
+    <% end %>
+</div>
+
+</div>
+

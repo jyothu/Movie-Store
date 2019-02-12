@@ -1,0 +1,33 @@
+<h1>Showing the selected Movie</h1>
+
+<p>
+  Movie Name: <%= @movie.name %>
+</p>
+
+<p>
+  Release Date: <%= @movie.release_date %>
+</p>
+
+<p>
+  Short Description: <%= @movie.short_description %>
+</p>
+
+<p>
+  Description: <%= @movie.description %>
+</p>
+
+<p>
+  Genre: <%= @movie.genre %>
+</p>
+
+<p>
+  Recommended: <%= @movie.recommended? %>
+</p>
+
+<p>
+  Age Bar: <%= @movie.age_bar %>
+</p>
+
+<p>
+  Wallpaper: <%= image_tag @movie.wallpaper.url(:thumb)%>
+</p>
