@@ -13,13 +13,18 @@ class CreateMovies < ActiveRecord::Migration[5.0]
     end
 
     create_table :stars do |t|
-      t.belongs_to :movie, index: true
       t.string :hero
       t.string :heroin
       t.string :director
       t.string :producer
       t.string :supporting_cast
       t.timestamps 
+    end
+
+    create_table :movie_stars do |t|
+      t.belongs_to :movie, index: true
+      t.belongs_to :movie_star, index: true
+      t.string :role
     end
   end
 end
