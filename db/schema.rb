@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190212092559) do
+ActiveRecord::Schema.define(version: 20190213095413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20190212092559) do
 
   create_table "movie_stars", force: :cascade do |t|
     t.integer "movie_id"
-    t.integer "movie_star_id"
+    t.integer "star_id"
     t.string  "role"
     t.index ["movie_id"], name: "index_movie_stars_on_movie_id", using: :btree
-    t.index ["movie_star_id"], name: "index_movie_stars_on_movie_star_id", using: :btree
+    t.index ["star_id"], name: "index_movie_stars_on_star_id", using: :btree
   end
 
   create_table "movies", force: :cascade do |t|
