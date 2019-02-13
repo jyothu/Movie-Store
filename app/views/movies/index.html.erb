@@ -9,13 +9,13 @@
         <button class="btn btn-default">
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
     </div> </h2>
-    <br> <br>
+    <br><br>
 
   <div class="container">
 
   <% @movie.each do |movie| %>
     <div class="card1">
-    <img class="card-img-top" src="movie.wallpaper.url" style="width:100%">
+    <img class="card-img-top" style="width:100%">
       <%= image_tag movie.wallpaper.url(:thumb)%>
       <div class="card-body">
         <h4 class="card-title"><%= movie.name %></h4>
