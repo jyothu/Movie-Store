@@ -31,3 +31,16 @@
 <p>
   Wallpaper: <%= image_tag @movie.wallpaper.url(:thumb)%>
 </p>
+
+<p>
+<%= form_tag("/comments", method: "post") do %>
+  <%= hidden_field(:current_user, :id) %>
+  <%= hidden_field(:movie, :id) %>
+  <%= label_tag(:review, "Review:") %>
+  <%= text_field_tag(:review) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+</p>
+
+
+

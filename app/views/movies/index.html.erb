@@ -20,7 +20,9 @@
       <div class="card-body">
         <h4 class="card-title"><%= movie.name %></h4>
         <p class="card-text"><%= movie.short_description %></p>
-        <a href="#" class="btn btn-primary">Find More!</a>
+        <br/><a href="/movies/<%= movie.id %>" class="btn btn-primary">Find More!</a>
+        <p>
+      </p>
       </div>
     </div>
     <% end %>
