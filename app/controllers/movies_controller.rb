@@ -33,18 +33,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-
-    @comments = Comment.new
-    @movie_comments = @movie.comments
-
-    puts "movie----------#{@movie_comments}"
-
-    # @user = User.all
-    # @comment = Comment.new
-    # puts "movie ID:------------- #{@movie}"
-    # puts "user ID:------------ #{current_user.id}"
-    # @comment.user_id = @user.ids
-    # @comment.movie_id = @movie.ids
   end
 
   private 

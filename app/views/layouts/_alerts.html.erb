@@ -1,2 +1,6 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% flash.each do |name,msg| %>
+    <div class="alert alert-<%= name %> alert-dismissible">
+    <a href="#" class="close" aria-label="close", data-dismiss="alert">&times;</a>
+    <%= msg %>
+<% end %>
+</div>

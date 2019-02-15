@@ -1,7 +1,13 @@
 class CommentsController < ApplicationController
+   before_action :authenticate_user!
 
     def new 
         @comment = Comment.new
+        email=session[:user]
+        puts "#{email}"
+        if email.blank?
+          redirect_to new_user_session_path
+        end
     end
 
     def create
@@ -12,7 +18,7 @@ class CommentsController < ApplicationController
         puts "Comments--------------#{@comment.review}"
         puts "Comments--------------#{@comment.movie_id}"
         puts "Comments--------------#{@comment.user_id}"
-          flash[:notice] = "Comment was successfully submitted"
+        flash[:notice] = "Comment was successfully submitted"
     end
 
     private 

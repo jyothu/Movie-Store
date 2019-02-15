@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
