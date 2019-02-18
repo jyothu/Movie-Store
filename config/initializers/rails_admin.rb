@@ -1,6 +1,7 @@
 RailsAdmin.config do |config|
   config.authorize_with do
-   redirect_to main_app.root_path unless warden.user.admin == (true || nil)
+   redirect_to main_app.root_path unless warden.user.admin == true
+   puts "admin----------#{warden.user.admin}"
   end
   ### Popular gems integration
 
