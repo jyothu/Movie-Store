@@ -9,3 +9,4 @@ FactoryGirl.define do
       f.supporting_cast { Faker::Name.name }
     end
   end
+  

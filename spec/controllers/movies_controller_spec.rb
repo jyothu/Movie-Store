@@ -6,7 +6,6 @@ describe MoviesController do
        movie = FactoryGirl.create(:movie)
        get :index
        assigns(:movies).should eq([movie])
-       #expect(assigns(:movies)).to include(movie)
       end
     
      it "renders the :index view" do

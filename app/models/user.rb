@@ -1,3 +1,4 @@
+# Model for the user
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,7 +8,6 @@ class User < ApplicationRecord
   validates :email, :password, :first_name, :last_name, presence: true
 
   def fullname
-    [first_name, last_name].join " "
+    [first_name, last_name].join ' '
   end
-
 end

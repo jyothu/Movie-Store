@@ -1,7 +1,8 @@
+# Controller for user comments on the movie.
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  def new 
+  def new
     @comment = Comment.new
   end
 
@@ -10,12 +11,13 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.movie_id = params[:movie][:id]
     if @comment.save
-      flash[:notice] = "Comment was successfully submitted"
+      flash[:notice] = 'Comment was successfully submitted'
       redirect_to movies_path
     end
   end
 
-  private 
+  private
+
   def comment_params
     params.permit(:user_id, :movie_id, :review)
   end
