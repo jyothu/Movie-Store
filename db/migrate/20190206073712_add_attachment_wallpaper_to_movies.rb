@@ -1,3 +1,4 @@
+# Migration for paperclip
 class AddAttachmentWallpaperToMovies < ActiveRecord::Migration
   def self.up
     change_table :movies do |t|

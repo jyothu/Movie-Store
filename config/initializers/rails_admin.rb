@@ -1,7 +1,7 @@
 RailsAdmin.config do |config|
   config.authorize_with do
-   redirect_to main_app.root_path unless warden.user.admin == true
-   puts "admin----------#{warden.user.admin}"
+    redirect_to main_app.root_path unless warden.user.admin == true
+    puts "admin----------#{warden.user.admin}"
   end
   ### Popular gems integration
 
@@ -18,7 +18,8 @@ RailsAdmin.config do |config|
   # config.authorize_with :pundit
 
   ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
+  # config.audit_with :paper_trail, 'User',
+  # 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 

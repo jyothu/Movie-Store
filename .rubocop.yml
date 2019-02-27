@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - './config/initializers/devise.rb'
+    - './Gemfile'
+    - './app/mailers/application_mailer.rb'
+    - './test/test_helper.rb'
+    - './config/initializers/new_framework_defaults.rb'
+    - './config/spring.rb'
+    - './config/puma.rb'
+    - './config/environments/production.rb'
+    - './bin/update'
+    - './bin/rails'
+    - './bin/setup'
+    - './db/migrate/*'
+    - './db/schema.rb'

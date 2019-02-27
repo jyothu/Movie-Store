@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20190213095413) do
     t.text     "short_description"
     t.text     "description"
     t.string   "genre"
-    t.boolean  "recommended?"
+    t.boolean  "recommended"
     t.integer  "age_bar"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false

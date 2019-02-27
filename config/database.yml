@@ -18,7 +18,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: test_moviestore_database
+  database: moviestore_test_db
 
 production:
   <<: *default

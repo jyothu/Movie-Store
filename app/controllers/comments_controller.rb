@@ -2,18 +2,18 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @comment = Comment.new
-  end
-
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.movie_id = params[:movie][:id]
+
     if @comment.save
       flash[:notice] = 'Comment was successfully submitted'
-      redirect_to movies_path
+    else
+      flash[:alert] = 'Something went wrong. Please try again later!'
     end
+
+    redirect_to movies_path
   end
 
   private
