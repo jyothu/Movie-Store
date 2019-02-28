@@ -9,8 +9,12 @@ class Movie < ApplicationRecord
   validates_attachment_content_type :wallpaper,
     presence: true,
     content_type: %w(image/jpg image/jpeg image/png image/gif)
+
   validates :name, presence: true, length: { minimum: 3, maximum: 25 }
-  validates :release_date, :short_description, :genre, presence: true
+
+  validates :release_date, :short_description, :genre,
+    presence: true
+
   validates :age_bar, numericality: { less_than_or_equal_to: 99 },
-  presence: true
+    presence: true
 end
