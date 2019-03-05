@@ -1,0 +1,31 @@
+%body{:style => "background-color:rgb(32, 29, 29)"}
+  %button.btn.btn-warning{:type => "button"}= link_to 'Sign out', destroy_user_session_path, method: :delete
+  .show
+    %h1 Showing the selected Movie
+    %p
+      Movie Name: #{@movie.name}
+    %p
+      Release Date: #{@movie.release_date}
+    %p
+      Star Cast: #{@star.hero} , #{@star.heroin} , #{@star.director} , #{@star.producer} , #{@star.supporting_cast}
+    %p
+      Short Description: #{@movie.short_description}
+    %p
+      Description: #{@movie.description}
+    %p
+      Genre: #{@movie.genre}
+    %p
+      Recommended: #{@movie.recommended?}
+    %p
+      Age Bar: #{@movie.age_bar}
+    %p
+      Wallpaper: #{image_tag @movie.wallpaper.url(:thumb)}
+    %p
+      = form_tag("/comments", method: "post") do
+        = hidden_field(:current_user, :id)
+        = hidden_field(:movie, :id)
+        = label_tag(:review, "Review:")
+        = text_field_tag(:review)
+        = submit_tag("Submit")
+      %br/
+      %a{:href => "/movies"} Back
