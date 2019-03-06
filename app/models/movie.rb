@@ -10,7 +10,8 @@ class Movie < ApplicationRecord
     presence: true,
     content_type: %w(image/jpg image/jpeg image/png image/gif)
 
-  validates :name, presence: true, length: { minimum: 3, maximum: 25 }
+  validates :name, length: { minimum: 3, maximum: 25 },
+    presence: true
 
   validates :release_date, :short_description, :genre,
     presence: true

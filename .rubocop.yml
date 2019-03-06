@@ -13,3 +13,6 @@ AllCops:
     - './bin/setup'
     - './db/migrate/*'
     - './db/schema.rb'
+    - './app/models/movie.rb'
+    - './app/models/star.rb'
+    - './spec/controllers/comments_controller_spec.rb'
