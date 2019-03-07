@@ -21,6 +21,14 @@
     padding: 50px;
 }
 
+.btn.btn-primary {
+    float:left;
+}
+
+.breadcrumb-item active{
+  float:left;
+}
+
 .a {
     float:left;
     padding-right:20px;
@@ -31,3 +39,25 @@
     width:10%;
 }
 
+.review-block{
+	border:1px solid #EFEFEF;
+	padding:15px;
+	border-radius:3px;
+	margin-bottom:15px;
+}
+.review-block-name{
+	font-size:12px;
+	margin:10px 0;
+}
+.review-block-date{
+	font-size:12px;
+}
+.review-block-rate{
+	font-size:13px;
+	margin-bottom:15px;
+}
+.review-block-title{
+	font-size:15px;
+	font-weight:700;
+	margin-bottom:10px;
+}

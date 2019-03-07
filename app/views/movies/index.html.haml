@@ -7,7 +7,10 @@
         Movie Store
         %br/
         %small.site-description Welcome to the movie world!!
-      %button.btn.btn-warning{:type => "button"}= link_to 'Sign in', new_user_session_path
+      - if user_signed_in?
+        %button.btn.btn-warning{:type => "button"}= link_to 'Sign out', destroy_user_session_path, method: :delete
+      - else
+        %button.btn.btn-warning{:type => "button"}= link_to 'Sign in', new_user_session_path
     .container
       - @movies.each do |movie|
         .a

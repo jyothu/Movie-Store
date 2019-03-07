@@ -7,6 +7,5 @@ FactoryGirl.define do
     f.short_description { Faker::Lorem.paragraph }
     f.genre { Faker::Lorem.word }
     f.age_bar { Faker::Number.number(2) }
-    # f.movie_star { create(:movie_star) }
   end
 end

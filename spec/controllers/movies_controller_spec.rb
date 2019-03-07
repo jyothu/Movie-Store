@@ -17,10 +17,8 @@ describe MoviesController do
   describe 'GET #show' do
     it 'assigns the requested movie to @movie' do
       movie = FactoryGirl.create(:movie)
-      # star = FactoryGirl.create(:star)
       get :show, id: movie
       assigns(:movie).should eq(movie)
-      # assigns(:star).should eq([star])
     end
 
     it 'renders the :show template' do

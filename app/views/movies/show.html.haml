@@ -1,5 +1,5 @@
 %body{:style => "background-color:rgb(32, 29, 29)"}
-  %button.btn.btn-warning{:type => "button"}= link_to 'Sign out', destroy_user_session_path, method: :delete
+
   .show
     %h1 Showing the selected Movie
     %p
@@ -20,16 +20,33 @@
       Genre: #{@movie.genre}
     %p
       Recommended:
-      - @movie.recommended ? 'Yes' : 'No'
+      = @movie.recommended ? 'Yes' : 'No'
     %p
       Age Bar: #{@movie.age_bar}
     %p
-      Wallpaper: #{image_tag @movie.wallpaper.url(:thumb)}
+      %button.btn.btn-primary{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-target" => "#collapseExample", "data-toggle" => "collapse", :type => "button"}
+        User Reviews
+    %br/
+    %br/
+    #collapseExample.collapse
+      %nav{"aria-label" => "breadcrumb"}
+        - @comments.each do |comment|
+          .review-block
+            .row
+              .col-sm-3
+                %img.img-rounded{:src => "http://dummyimage.com/60x60/666/ffffff&text=No+Image"}/
+                .review-block-name
+                  = comment.user.first_name
+                  = comment.user.last_name
+                .review-block-date
+                  = comment.created_at.strftime('%Y-%m-%d')
+                %br/
+              .review-block-title= comment.review
     %p
       = form_tag("/comments", method: "post") do
         = hidden_field(:current_user, :id)
         = hidden_field(:movie, :id)
-        = label_tag(:review, "Review:")
+        = label_tag(:review, "Submit Review:")
         = text_field_tag(:review)
         = submit_tag("Submit")
       %br/
