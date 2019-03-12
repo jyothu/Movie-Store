@@ -16,3 +16,4 @@ AllCops:
     - './app/models/movie.rb'
     - './app/models/star.rb'
     - './spec/controllers/comments_controller_spec.rb'
+    - './spec/spec_helper.rb'

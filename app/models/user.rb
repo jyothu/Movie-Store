@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :comments
   validates :email, :password, :first_name, :last_name, presence: true
 
+  def current_admin
+    current_user && current_user.is_admin
+  end
+  
   def fullname
     [first_name, last_name].join ' '
   end

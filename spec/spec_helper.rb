@@ -18,21 +18,34 @@ require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
-  Shoulda::Matchers.configure do |config|
-    config.integrate do |with|
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
-    end
   end
+end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::TestHelpers, type: :view
+  config.include Devise::TestHelpers, type: :controller
+  config.include Warden::Test::Helpers
+
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
+
+  config.use_transactional_fixtures = true
+
+  config.infer_base_class_for_anonymous_controllers = false
+
+  config.include FactoryGirl::Syntax::Methods
+  config.include Rails.application.routes.url_helpers
+
   config.expect_with :rspec do |expectations|
-    config.include Devise::Test::ControllerHelpers, type: :controller
+
 
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/movies/:id', to: 'movies#show'
 
   devise_for :users
-
   post '/comments', to: 'comments#create'
 
   # For details on the DSL available within this file,

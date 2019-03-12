@@ -1,15 +1,22 @@
 RailsAdmin.config do |config|
+
+  ## == Devise ==
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
+
   config.authorize_with do
     redirect_to main_app.root_path unless warden.user.admin == true
   end
   ### Popular gems integration
-
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
+  # config.authorize_with do
+  #   authenticate_or_request_with_http_basic('Login required') do |username, password|
+  #     username == Rails.application.secrets.user &&
+  #     password == Rails.application.secrets.password
+  #   end
   # end
-  # config.current_user_method(&:current_user)
-
+  
   ## == Cancan ==
   # config.authorize_with :cancan
 

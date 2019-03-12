@@ -27,7 +27,7 @@ describe User do
     expect(user).not_to be_valid
   end
 
-   it 'returns a user full name as a string' do
-     expect(user.fullname).to eql("#{user.first_name} #{user.last_name}")
-   end
+  it 'returns a user full name as a string' do
+    expect(user.fullname).to eql("#{user.first_name} #{user.last_name}")
+  end
 end
