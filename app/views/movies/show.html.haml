@@ -1,4 +1,4 @@
-%body{:style => "background-color:rgb(32, 29, 29)"}
+%body{style: "background-color:rgb(32, 29, 29)"}
 
   .show
     %h1 Showing the selected Movie
@@ -24,17 +24,17 @@
     %p
       Age Bar: #{@movie.age_bar}
     %p
-      %button.btn.btn-primary{"aria-controls" => "collapseExample", "aria-expanded" => "false", "data-target" => "#collapseExample", "data-toggle" => "collapse", :type => "button"}
+      %button.btn.btn-primary{"aria-controls": "collapseExample", "aria-expanded": "false", "data-target": "#collapseExample", "data-toggle": "collapse", type: "button"}
         User Reviews
     %br/
     %br/
     #collapseExample.collapse
-      %nav{"aria-label" => "breadcrumb"}
+      %nav{"aria-label": "breadcrumb"}
         - @comments.each do |comment|
           .review-block
             .row
               .col-sm-3
-                %img.img-rounded{:src => "http://dummyimage.com/60x60/666/ffffff&text=No+Image"}/
+                %img.img-rounded{src: "http://dummyimage.com/60x60/666/ffffff&text=No+Image"}/
                 .review-block-name
                   = comment.user.first_name
                   = comment.user.last_name
@@ -50,4 +50,4 @@
         = text_field_tag(:review)
         = submit_tag("Submit")
       %br/
-      %a{:href => "/movies"} Back
+      %a{href: "/movies"} Back
