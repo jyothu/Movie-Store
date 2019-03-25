@@ -48,6 +48,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'bullet'
   # Access an IRB console on exception pages or by using
   # <%= console %> anywhere in the code.

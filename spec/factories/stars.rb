@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: stars
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  role        :integer          default("hero")
+#  age         :integer
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 require 'faker'
 
 FactoryGirl.define do
