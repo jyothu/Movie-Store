@@ -1,17 +1,20 @@
 source 'https://rubygems.org'
-gem 'bootstrap-sass', '~> 3.3.5'
+# gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '>= 3.4.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use postgreSQL as the database for Active Record
-gem 'devise'
+# gem 'devise'
+gem 'devise', '>= 4.6.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'paperclip', '~> 5.0.0.beta1'
+# gem 'paperclip', '~> 5.0.0.beta1'
+gem 'paperclip', '>= 5.2.0'
 gem 'pg', '>= 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -45,6 +48,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bullet'
   # Access an IRB console on exception pages or by using
   # <%= console %> anywhere in the code.
   gem 'listen', '~> 3.0.5'
