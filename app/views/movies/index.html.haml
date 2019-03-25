@@ -20,6 +20,6 @@
             .card-body
               %h4.card-title= movie.name
               %p.card-text
-                Releasing: #{ movie.release_date }
+                Releasing: #{movie.release_date}
               %p.card-text= movie.genre
-              %a.btn.btn-primary{ href: "/movies/#{ movie.id }" } Find More!
+              %a.btn.btn-primary{ href: "/movies/#{movie.id}" } Find More!
