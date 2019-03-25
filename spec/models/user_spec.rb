@@ -28,6 +28,6 @@ describe User do
   end
 
   it 'returns a user full name as a string' do
-    expect(user.fullname).to eql("#{user.first_name} #{user.last_name}")
+    expect(user.full_name).to eql("#{user.first_name} #{user.last_name}")
   end
 end
