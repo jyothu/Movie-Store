@@ -56,4 +56,19 @@ describe Movie do
     movie.age_bar = 100
     expect(movie).not_to be_valid
   end
+
+  it "should have many stars" do
+    t = Movie.reflect_on_association(:stars)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many movie stars" do
+    t = Movie.reflect_on_association(:movie_stars)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many comments" do
+    t = Movie.reflect_on_association(:comments)
+    expect(t.macro).to eq(:has_many)
+  end
 end

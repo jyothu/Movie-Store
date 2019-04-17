@@ -47,4 +47,9 @@ describe User do
   it 'returns a user full name as a string' do
     expect(user.full_name).to eql("#{user.first_name} #{user.last_name}")
   end
+
+  it "should have many comments" do
+    t = User.reflect_on_association(:comments)
+    expect(t.macro).to eq(:has_many)
+  end
 end

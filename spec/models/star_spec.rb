@@ -34,4 +34,14 @@ describe Star do
     star.age = nil
     expect(star).not_to be_valid
   end
+
+  it "should have many movie stars" do
+    t = Star.reflect_on_association(:movie_stars)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it "should have many movies" do
+    t = Star.reflect_on_association(:movies)
+    expect(t.macro).to eq(:has_many)
+  end
 end
