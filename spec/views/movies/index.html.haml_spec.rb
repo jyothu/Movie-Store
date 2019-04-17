@@ -4,6 +4,16 @@ RSpec.describe 'movies/index' do
   it 'has a request.fullpath that is defined' do
     expect(controller.request.fullpath).to eq root_path
   end
+  
+  it 'has a sign in button' do
+    visit('/movies')
+    expect(page).to have_button('Sign in')
+  end
+
+  it 'has a title' do
+    visit('/movies')
+    page.should have_content('Movie Store')
+  end
 
   it 'displays all the movies' do
     assign(:movies,

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '>= 3.4.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+gem 'capybara'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
