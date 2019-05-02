@@ -1,4 +1,5 @@
 # Controller for displaying movies in the index page.
+# Movie controller
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
